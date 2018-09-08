@@ -1,0 +1,82 @@
+[
+  {
+    "id": "69689d49-f415-4171-aa23-81ef843eab05",
+    "title": "Zed & Two Noughts, A",
+    "genre": "Drama",
+    "releaseDate": "7/27/2018",
+    "isActive": true,
+    "description": "ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis"
+  },
+  {
+    "id": "6f285eea-300a-4115-b78d-32a7c322b2bc",
+    "title": "9500 Liberty",
+    "genre": "Documentary",
+    "releaseDate": "10/21/2017",
+    "isActive": true,
+    "description": "elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in"
+  },
+  {
+    "id": "4eb6dbb9-0236-4c37-aa88-d1cced072f80",
+    "title": "American Astronaut, The",
+    "genre": "Comedy|Musical|Sci-Fi",
+    "releaseDate": "2/1/2018",
+    "isActive": true,
+    "description": "est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus"
+  },
+  {
+    "id": "2a003410-a76b-407a-b947-55d0df1d7c53",
+    "title": "Suppose They Gave a War and Nobody Came?",
+    "genre": "Comedy|Drama",
+    "releaseDate": "3/27/2018",
+    "isActive": false,
+    "description": "at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante"
+  },
+  {
+    "id": "fc26f7c7-59b3-4567-9d12-1bfa0ae36511",
+    "title": "Thank Your Lucky Stars",
+    "genre": "Comedy|Musical",
+    "releaseDate": "8/14/2018",
+    "isActive": true,
+    "description": "nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu"
+  },
+  {
+    "id": "b4c4524e-6f82-4b74-99cc-e974f28b3774",
+    "title": "Hamlet",
+    "genre": "Drama",
+    "releaseDate": "9/16/2017",
+    "isActive": false,
+    "description": "mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla"
+  },
+  {
+    "id": "20ce03b2-abb5-4dc2-a075-e5674b312619",
+    "title": "Hav Plenty",
+    "genre": "Comedy",
+    "releaseDate": "1/10/2018",
+    "isActive": false,
+    "description": "rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi"
+  },
+  {
+    "id": "c25188c4-4844-40e5-b59e-1a48f036b40a",
+    "title": "Things Change",
+    "genre": "Comedy",
+    "releaseDate": "4/21/2018",
+    "isActive": true,
+    "description": "venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet"
+  },
+  {
+    "id": "a964524d-711f-4cf8-8c63-13e909302179",
+    "title": "Lords of Discipline, The",
+    "genre": "Thriller",
+    "releaseDate": "4/2/2018",
+    "isActive": false,
+    "description": "lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt"
+  },
+  {
+    "id": "54c0b124-4574-49ca-b321-0b13b2576f07",
+    "title": "Great King, The (Der große König)",
+    "genre": "Drama|War",
+    "releaseDate": "5/3/2018",
+    "isActive": true,
+    "description": "magnis dis parturient montes nascetur ridiculus mus etiam vel augue"
+  }
+]
