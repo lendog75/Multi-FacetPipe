@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { FacetFilterOptions } from '../models/facet-filter-options.model';
+import { FacetOptions } from '../models/facet-filter-options.model';
 import { MovieSummary } from '../models/movie-summary.model';
 
 // filter for N facets of data
@@ -30,7 +30,7 @@ export class FacetFilterPipe implements PipeTransform {
    *
    * @returns {MovieSummary[]} the newly filtered array
    **/
-  public transform(records: MovieSummary[], filterOptions: FacetFilterOptions, filterMetadata: any): MovieSummary[] {
+  public transform(records: MovieSummary[], filterOptions: FacetOptions, filterMetadata: any): MovieSummary[] {
     const items: MovieSummary[] = this.filterItems(records, filterOptions);
     filterMetadata.count = items ? items.length : 0;
     return items;
@@ -46,8 +46,9 @@ export class FacetFilterPipe implements PipeTransform {
    *
    * @returns {any[]}
    **/
-  private intersection(arrayA: any[], arrayB: any[]): any[] {
-    return arrayA.filter((x: any) => arrayB.find((y: any) => x.id === y.id));
+  private intersection(arrayA: any[], arrayB: Set<any>): any[] {
+    return arrayA;
+  //  return arrayA.filter((x: any) => arrayB.has((y: any) => x.id === y.id));
   }
 
   /**
@@ -61,7 +62,7 @@ export class FacetFilterPipe implements PipeTransform {
    *
    * @returns {any[]} the newly created and loaded MatchMap
    **/
-  private getMatchMap(records: any[], filterOptions: FacetFilterOptions): Map<string, any[]> {
+  private getMatchMap(records: any[], filterOptions: FacetOptions): Map<string, any[]> {
 
     // setup matchMap, to hold an array of matches for each filter, keyed by filter name
     const matchMap: Map<string, any[]> = new Map<string, any[]>()
@@ -93,7 +94,7 @@ export class FacetFilterPipe implements PipeTransform {
    *
    * @returns {MovieSummary[]} the newly filtered array
    **/
-  private filterItems(records: MovieSummary[], filterOptions: FacetFilterOptions): MovieSummary[] {
+  private filterItems(records: MovieSummary[], filterOptions: FacetOptions): MovieSummary[] {
     let intersectionArray: any[] = records;
 
     // short circuit if no records

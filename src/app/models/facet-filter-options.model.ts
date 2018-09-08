@@ -1,21 +1,17 @@
-export interface FacetFilterOptionsInterface {
-  genre?: any[];
-  releaseDate?: any[];
-  status?: any[];
-  isActive?: any[];
+export interface FacetOptionsInterface {
+  genre?: Set<string>;
+  releaseDate?: Set<string>;
+  isActive?: Set<boolean>;
 }
 
-export class FacetFilterOptions implements FacetFilterOptionsInterface {
-  public genre: any[];
-  public releaseDate: any[];
-  public status: any[];
-  public isActive: any[];
+export class FacetOptions implements FacetOptionsInterface {
+  public genre: Set<string>;
+  public releaseDate: Set<any>;
+  public isActive: Set<boolean>;
 
-
-  constructor({genre = [], releaseDate = [], status = [], isActive = []}: FacetFilterOptionsInterface) {
+  constructor({genre, releaseDate, isActive}: FacetOptionsInterface) {
     this.genre = genre;
     this.releaseDate = releaseDate;
-    this.status = status;
     this.isActive = isActive;
   }
 }
