@@ -2,14 +2,14 @@ export interface FacetFilterOptionsInterface {
   genre?: any[];
   releaseDate?: any[];
   status?: any[];
-  isActive?: any[];
+  isActive?: boolean[];
 }
 
 export class FacetFilterOptions implements FacetFilterOptionsInterface {
   public genre: any[];
   public releaseDate: any[];
   public status: any[];
-  public isActive: any[];
+  public isActive: boolean[];
 
 
   constructor({genre = [], releaseDate = [], status = [], isActive = []}: FacetFilterOptionsInterface) {
