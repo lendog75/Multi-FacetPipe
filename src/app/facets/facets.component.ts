@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MovieSummary } from '../models/movie-summary.model';
 import { FacetFilterOptions } from '../models/facet-filter-options.model';
+import { MovieSummary } from '../models/movie-summary.model';
 
 @Component({
   selector: 'app-facets',
@@ -12,20 +12,22 @@ export class FacetsComponent implements OnInit {
   public facetGroups: FacetFilterOptions = new FacetFilterOptions({});
 
   @Input('records')
-  set records(value: MovieSummary[]) {
+  public set records (value: MovieSummary[]) {
     this._records = value;
     this.facetGroups = this.loadFacetGroups(value);
   }
+
+  public get records (): MovieSummary[] {
+    return this._records;
+  }
+
   @Output() public filter: EventEmitter<FacetFilterOptions> = new EventEmitter<FacetFilterOptions>();
 
   private _records: MovieSummary[];
 
-  get records(): MovieSummary[] {
-    return this._records;
-  }
-  constructor() { }
+  constructor () { }
 
-  ngOnInit() {
+  ngOnInit () {
     this.facetOptions = new FacetFilterOptions({});
   }
 
@@ -50,7 +52,7 @@ export class FacetsComponent implements OnInit {
     return facetGroups;
   }
 
-  public setFacetOptions(group: string, value: string): void {
+  public setFacetOptions (group: string, value: string): void {
     value = value.toString();
     const facets: FacetFilterOptions = new FacetFilterOptions({
       genre: Array.from(this.facetOptions.genre),
@@ -61,7 +63,7 @@ export class FacetsComponent implements OnInit {
 
     const hasValue: boolean = facets[group].find((x: any) => x === value);
 
-   if (!hasValue) {
+    if (!hasValue) {
       facets[group].push(value);
     } else {
       facets[group].splice(facets[group].indexOf(value), 1);
