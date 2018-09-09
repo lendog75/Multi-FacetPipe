@@ -12,16 +12,18 @@
       <th scope="col"><h5>Title</h5></th>
       <th scope="col"><h5>Genre</h5></th>
       <th scope="col"><h5>Release Date</h5></th>
-      <th scope="col"><h5>Active</h5></th>
+      <th scope="col"><h5>Stars</h5></th>
+      <th scope="col"><h5>Rating</h5></th>
       <th scope="col"><h5>Description</h5></th>
     </tr>
     </thead>
     <tbody class="table-striped">
     <tr *ngFor="let m of movies | facetFilter:filters:filterMetadata">
-      <td>{{m.title }}</td>
+      <td>{{m.title }} <br><small>id:{{m.id}}</small></td>
       <td>{{ m.genre }}</td>
       <td>{{ m.releaseDate }}</td>
-      <td>{{ m.isActive }}</td>
+      <td>{{ m.stars }}</td>
+      <td>{{ m.rating }}</td>
       <td>{{ m.description }}</td>
     </tr>
     </tbody>

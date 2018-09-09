@@ -4,7 +4,7 @@ export interface MovieSummary {
   title;
   genre: string;
   releaseDate: Date;
-  isActive: boolean;
+  stars: any;
+  rating: any;
   description: string;
-
 }

@@ -17,6 +17,6 @@ export class MovieService {
    * @return {Observable<MovieSummary[]>}
    **/
   public get(): Observable<MovieSummary[]> {
-    return this.http.get<MovieSummary[]>('./assets/data/movies-all.json');
+    return this.http.get<MovieSummary[]>('./assets/data/movies-long-list.json');
   }
 }

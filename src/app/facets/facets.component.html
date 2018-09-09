@@ -22,13 +22,24 @@
     </div>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Active</h5>
+        <h5 class="card-title">Stars</h5>
         <ul>
-          <li *ngFor="let value of facetGroups.isActive">
-            <input type="checkbox" (click)="setFacetOptions('isActive', value)"> {{ value }}
+          <li *ngFor="let value of facetGroups.stars">
+            <input type="checkbox" (click)="setFacetOptions('stars', value)"> {{ value }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Rating</h5>
+        <ul>
+          <li *ngFor="let value of facetGroups.rating">
+            <input type="checkbox" (click)="setFacetOptions('rating', value)"> {{ value }}
           </li>
         </ul>
       </div>
     </div>
   </div>
 </section>
+{{ facetOptions | json }}

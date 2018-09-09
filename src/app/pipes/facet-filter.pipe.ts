@@ -30,9 +30,6 @@ export class FacetFilterPipe implements PipeTransform {
   private getMatchMap (records: any[], filterOptions: FacetFilterOptions): Map<string, any[]> {
     // setup matchMap, to hold an array of matches for each filter, keyed by filter name
     const matchMap: Map<string, any[]> = new Map<string, any[]>();
-    Object.keys(filterOptions).forEach((filter: any) => {
-      matchMap.set(filter, []);
-    });
 
     Object.keys(filterOptions).forEach((filter: any) => {
       const arr = records.filter(x => filterOptions[filter].includes(x[filter]));

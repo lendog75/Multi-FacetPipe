@@ -35,30 +35,33 @@ export class FacetsComponent implements OnInit {
     const facetGroups: FacetFilterOptions = new FacetFilterOptions({});
     const genereSet = new Set<string>();
     const releaseDateSet = new Set<any>();
-    const isActiveSet = new Set<boolean>();
+    const starsSet = new Set<number>();
+    const ratingSet = new Set<string>();
 
     if (array) {
       array.forEach((x: MovieSummary) => {
         genereSet.add(x.genre);
         releaseDateSet.add(x.releaseDate);
-        isActiveSet.add(x.isActive);
+        starsSet.add(x.stars);
+        ratingSet.add(x.rating);
       });
     }
 
     facetGroups.genre = Array.from(genereSet).sort();
     facetGroups.releaseDate = Array.from(releaseDateSet).sort();
-    facetGroups.isActive = Array.from(isActiveSet).sort();
+    facetGroups.stars = Array.from(starsSet).sort();
+    facetGroups.rating = Array.from(ratingSet).sort();
 
     return facetGroups;
   }
 
   public setFacetOptions (group: string, value: string): void {
-    value = value.toString();
+    value = value;
     const facets: FacetFilterOptions = new FacetFilterOptions({
       genre: Array.from(this.facetOptions.genre),
       releaseDate: Array.from(this.facetOptions.releaseDate),
-      status: Array.from(this.facetOptions.status),
-      isActive: Array.from(this.facetOptions.isActive),
+      stars: Array.from(this.facetOptions.stars),
+      rating: Array.from(this.facetOptions.rating),
     });
 
     const hasValue: boolean = facets[group].find((x: any) => x === value);
