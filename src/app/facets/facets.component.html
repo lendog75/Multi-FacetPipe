@@ -1,8 +1,8 @@
 <section class="row facets">
-  <div class="col-md-12 card-group">
-    <div class="card">
+  <div class="">
+    <div class="card" style="border: none">
       <div class="card-body">
-        <h5 class="card-title">Genre</h5>
+        <h6 class="card-title">Genre</h6>
         <ul>
           <li *ngFor="let value of facetGroups.genre">
             <input type="checkbox" (click)="setFacetOptions('genre', value)"> {{ value }}
@@ -10,19 +10,10 @@
         </ul>
       </div>
     </div>
-    <div class="card">
+
+    <div class="card" style="border: none">
       <div class="card-body">
-        <h5 class="card-title">Release Date</h5>
-        <ul>
-          <li *ngFor="let value of facetGroups.releaseDate">
-            <input type="checkbox" (click)="setFacetOptions('releaseDate', value)"> {{ value }}
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Stars</h5>
+        <h6 class="card-title">Stars</h6>
         <ul>
           <li *ngFor="let value of facetGroups.stars">
             <input type="checkbox" (click)="setFacetOptions('stars', value)"> {{ value }}
@@ -30,9 +21,9 @@
         </ul>
       </div>
     </div>
-    <div class="card">
+    <div class="card" style="border: none">
       <div class="card-body">
-        <h5 class="card-title">Rating</h5>
+        <h6 class="card-title">Rating</h6>
         <ul>
           <li *ngFor="let value of facetGroups.rating">
             <input type="checkbox" (click)="setFacetOptions('rating', value)"> {{ value }}
@@ -41,5 +32,17 @@
       </div>
     </div>
   </div>
+
+    <div class="card" style="border: none">
+      <div class="card-body">
+        <h6 class="card-title">Release Date</h6>
+        <ul>
+          <li *ngFor="let value of facetGroups.releaseDate">
+            <input type="checkbox" (click)="setFacetOptions('releaseDate', value)"> {{ value }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
 </section>
 {{ facetOptions | json }}

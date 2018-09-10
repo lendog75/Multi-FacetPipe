@@ -1,32 +1,36 @@
 <br><br>
-<div class="container">
-  <app-facets [records]="movies" (filter)="setFilter($event)"></app-facets>
-
-
+<div class="container" style="margin: 1em;">
   <h5 *ngIf="movies" style="margin: 2em 0;">Total Movies: {{ filterMetadata.count || 0 }}</h5>
 
-  <!-- Output Data -->
-  <table class="table table-bordered">
-    <thead>
-    <tr>
-      <th scope="col"><h5>Title</h5></th>
-      <th scope="col"><h5>Genre</h5></th>
-      <th scope="col"><h5>Release Date</h5></th>
-      <th scope="col"><h5>Stars</h5></th>
-      <th scope="col"><h5>Rating</h5></th>
-      <th scope="col"><h5>Description</h5></th>
-    </tr>
-    </thead>
-    <tbody class="table-striped">
-    <tr *ngFor="let m of movies | facetFilter:filters:filterMetadata">
-      <td>{{m.title }} <br><small>id:{{m.id}}</small></td>
-      <td>{{ m.genre }}</td>
-      <td>{{ m.releaseDate }}</td>
-      <td>{{ m.stars }}</td>
-      <td>{{ m.rating }}</td>
-      <td>{{ m.description }}</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="col-md-3">
+      <app-facets [records]="movies" (filter)="setFilter($event)"></app-facets>
+    </div>
+    <div class="col-md-9">
+      <!-- Output Data -->
+      <div class="row" *ngFor="let m of movies | facetFilter:filters:filterMetadata"
+           style="padding: 1rem; border-bottom: 1px solid silver; margin: 1rem;">
+        <div class="col-md-2 img"></div>
+        <div class="col-md-10">
+          <h5 class="card-title">{{m.title }}</h5>
+          <p class="card-text">{{m.description }}</p>
+          <div class="row">
+            <div class="col-md-4">
+              <h6 style="display: inline-block">Genre:</h6>
+              {{ m.genre }}
+            </div>
+            <div class="col-md-4">
+              <h6 style="display: inline-block">Rating:</h6>
+              {{ m.rating }}
+            </div>
+            <div class="col-md-4">
+              <h6 style="display: inline-block">Stars:</h6>
+              {{ m.stars }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
